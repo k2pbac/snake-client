@@ -1,3 +1,5 @@
+const { connect } = require("./client");
+
 let connection;
 
 const setupInput = function (conn) {
@@ -31,6 +33,7 @@ const handleUserInput = (...key) => {
     else if(key[0] === '\u0073'){
       // console.log("S pressed");
       connection.write('Move: down');
+      connection.write("Say: Going down!")
     }
   
   return key;
