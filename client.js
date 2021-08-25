@@ -14,9 +14,14 @@ const connect = function () {
     console.log(data.toString());
   });
 
-  conn.on('connect', () => {
-    conn.write('Name: KB');
-  })
+  
+  // conn.on('connect', () => {
+  //   let count = 0;
+  //  let id= setInterval( () => {
+  //   conn.write('Move: up');
+  //   count+=500;
+  // },500 + count);
+  // })
 
   return conn;
 };
@@ -25,3 +30,8 @@ const connect = function () {
 module.exports = {
   connect
 }
+
+// "Move: up" - move up one square (unless facing down)
+// "Move: down" - move down one square (unless facing up)
+// "Move: left" - move left one square (unless facing right)
+// "Move: right" - move left one square (unless facing left)
